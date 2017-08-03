@@ -38,10 +38,7 @@ fi
 
 /usr/bin/engine-upgrade-check -q || echo "No upgrade available." && exit 2
 
-if [ ! -x `which BackupOvirt.sh` ]; then
-  echo "ERROR: BackupOvirt.sh not found. Grab it from github.com/mtwebit."
-  exit 2
-fi
+which BackupOvirt.sh || echo "ERROR: BackupOvirt.sh not found. Grab it from github.com/mtwebit." && exit 2
 
 # yum loves to translate stuff
 export LC_ALL=C
