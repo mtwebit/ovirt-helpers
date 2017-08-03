@@ -14,10 +14,7 @@ if [ ! -x /usr/bin/ovirt-shell ]; then
   exit 2
 fi
 
-if [ ! -x `which GetOvirtUsers.sh` ]; then
-  echo "ERROR: GetOvirtUsers.sh not found. Grab it from github.com/mtwebit/."
-  exit 2
-fi
+which GetOvirtUsers.sh || echo "ERROR: GetOvirtUsers.sh not found. Grab it from github.com/mtwebit/." && exit 2
 
 while [[ $# -gt 0 ]]; do
   case $1 in
