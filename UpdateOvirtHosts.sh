@@ -36,9 +36,9 @@ if [ ! -x /usr/bin/ovirt-shell ]; then
   exit 2
 fi
 
-/usr/bin/engine-upgrade-check -q || echo "No upgrade available." && exit 2
+/usr/bin/engine-upgrade-check -q || { echo "No upgrade available." ; exit 2; }
 
-which BackupOvirt.sh || echo "ERROR: BackupOvirt.sh not found. Grab it from github.com/mtwebit." && exit 2
+which BackupOvirt.sh || { echo "ERROR: BackupOvirt.sh not found. Grab it from github.com/mtwebit."; exit 2; }
 
 # yum loves to translate stuff
 export LC_ALL=C
